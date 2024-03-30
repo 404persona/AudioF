@@ -1,0 +1,131 @@
+{
+    "products":[
+        {
+            "id":1,
+            "Name": "Sonic Haven",
+            "Price":"199.9",
+            "image":"./src/Components/Pages/images/H1.webp",
+            "description":"Escape the noise with these comfortable over-ear headphones featuring plush earcups and rich, balanced sound."
+        },
+        {
+            "id":2,
+            "Name": "Bassline Blasters",
+            "Price":"199.9",
+            "image":"./src/Components/Pages/images/H2.webp",
+            "description":"Feel the rhythm with these on-ear headphones that pack a punch with deep bass and clear highs."
+        },
+        {
+            "id":3,
+            "Name": "Harmony Travelers",
+            "Price":"199.9",
+            "image":"./src/Components/Pages/images/H3.webp",
+            "description":"Immerse yourself in audio bliss on the go with these active noise-canceling headphones with long battery life."
+        },
+        {
+            "id":4,
+            "Name": "Studio Stars",
+            "Price":"199.9",
+            "image":"./src/Components/Pages/images/H4.png",
+            "description":"Crafted for audiophiles, these professional-grade headphones deliver pristine sound and studio-quality monitoring."
+        },
+        {
+            "id":5,
+            "Name": "Wireless Whisper",
+            "Price":"199.9",
+            "image":"./src/Components/Pages/images/H5.png",
+            "description":"Experience true freedom with these sleek wireless headphones featuring seamless Bluetooth® connectivity and crystal-clear calls."
+        },
+        {
+            "id":6,
+            "Name": "Sport Striders",
+            "Price":"199.9",
+            "image":"./src/Components/Pages/images/H6.png",
+            "description":"Conquer your workouts with these sweatproof, secure-fit earbuds that deliver motivating sound and long-lasting battery life."
+        },
+        {
+            "id":7,
+            "Name": "Audio Aura",
+            "Price":"199.9",
+            "image":"./src/Components/Pages/images/H7.png",
+            "description":"Luxuriate in premium sound with these high-fidelity headphones featuring advanced noise-canceling technology and luxurious materials."
+        },
+        {
+            "id":8,
+            "Name": "Treble Titans",
+            "Price":"199.9",
+            "image":"./src/Components/Pages/images/H8.png",
+            "description":"Description: Sharpen your audio experience with these wired headphones that boast crisp treble and clear vocals."
+        },
+        {
+            "id":9,
+            "Name": "Wireless Whisper",
+            "Price":"199.9",
+            "image":"./src/Components/Pages/images/H9.png",
+            "description":"Experience true freedom with these sleek wireless headphones featuring seamless Bluetooth® connectivity and crystal-clear calls."
+        },
+        {
+            "id":10,
+            "Name": "Pocket Symphony",
+            "Price":"199.9",
+            "image":"./src/Components/Pages/images/H10.png",
+            "description":"Unleash a world of music with these true wireless earbuds that offer a comfortable fit, immersive sound, and a sleek charging case."
+        },
+        {
+            "id":11,
+            "Name": "Sonic Architects",
+            "Price":"199.9",
+            "image":"./src/Components/Pages/images/H11.png",
+            "description":"Build your perfect soundscape with these customizable EQ headphones that let you tailor the audio to your preferences."
+        },
+        {
+            "id":12,
+            "Name": "Clarity Companions",
+            "Price":"199.9",
+            "image":"./src/Components/Pages/images/H12.png",
+            "description":"Hear every detail with these audiophile-grade headphones that boast exceptional clarity and a wide soundstage."
+        },
+        {
+            "id":13,
+            "Name": "Bassline Brutes",
+            "Price":"199.9",
+            "image":"./src/Components/Pages/images/H13.png",
+            "description":"Unleash the power of bass with these over-ear headphones that deliver earth-shaking low frequencies for a truly immersive experience."
+        },
+        {
+            "id":14,
+            "Name": "Travel Tranquility",
+            "Price":"199.9",
+            "image":"./src/Components/Pages/images/H14.png",
+            "description":"Block out the world with these active noise-canceling headphones that offer exceptional comfort and long battery life for perfect travel companions."
+        },
+        {
+            "id":15,
+            "Name": "Wireless Warriors",
+            "Price":"199.9",
+            "image":"./src/Components/Pages/images/H15.webp",
+            "description":"Conquer your day with these water-resistant wireless earbuds that deliver secure fit, powerful sound, and long-lasting battery life."
+        }
+        
+    ],
+    "users":[
+        {
+            "id":1,
+            "name":"Anas Ahmad",
+            "email":"anas1@gmail.com",
+            "password":"anas1"
+        },
+        {
+            "id":2,
+            "name":"Anas Ahmad",
+            "email":"anas2@gmail.com",
+            "password":"anas2"
+        },
+        {
+            "id":3,
+            "name":"Anas Ahmad",
+            "email":"anas3@gmail.com",
+            "password":"anas3"
+        }
+
+    ]
+}
