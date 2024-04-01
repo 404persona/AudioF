@@ -13,6 +13,7 @@ import About from "./Components/Pages/About/About.jsx";
 import Contact from "./Components/Pages/Contact/Contact.jsx";
 import Error from "./Components/Pages/Error/Error.jsx";
 import DetailPage from "./Components/Pages/Home/DetailPage.jsx";
+import Layout from "./Components/Admin/Layout.jsx"
 
 const App = () => {
   return (
@@ -20,7 +21,7 @@ const App = () => {
       {/* <Header /> */}
       <Outlet />
       {/* Routes  */}
-      {window.location.pathname !== '/login' && window.location.pathname !== '/signup' && (
+      {window.location.pathname !== '/login' && window.location.pathname !== '/signup' && window.location.pathname !== '/admin-panel' && (
           <Header /> // Render header only on non-login/signup pages
         )}
       <Routes>
@@ -30,6 +31,7 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/shop/:id" element={<DetailPage/>} />
+        <Route path="/admin-panel" element={<Layout/>} />
         {/* nested routes for homepage  */}
         <Route path="/" element={<Home />}>
           <Route index element={<Headphones />} />
