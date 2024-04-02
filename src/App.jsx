@@ -13,17 +13,31 @@ import About from "./Components/Pages/About/About.jsx";
 import Contact from "./Components/Pages/Contact/Contact.jsx";
 import Error from "./Components/Pages/Error/Error.jsx";
 import DetailPage from "./Components/Pages/Home/DetailPage.jsx";
+import Layout from "./Components/Admin/Layout.jsx";
+import Dashboard from "./Components/Admin/Pages/Dashboard.jsx";
+import Marketing from "./Components/Admin/Pages/Marketing.jsx";
+import Orders from "./Components/Admin/Pages/Orders.jsx"
+// import Orders from "./Components/Admin/Pages/Products.jsx"
+import Products from "./Components/Admin/Pages/Products.jsx";
+import Reports from "./Components/Admin/Pages/Reports.jsx";
 
 const App = () => {
   return (
     <>
       {/* <Header /> */}
-      {/* <Outlet /> */}
+      <Outlet />
       {/* Routes  */}
       {window.location.pathname !== "/login" &&
         window.location.pathname !== "/signup" &&
         window.location.pathname !== "/admin" &&
-        location.pathname !== "/login-admin" && (
+        window.location.pathname !== "/admin" &&
+        window.location.pathname !== "/admin/dashboard" &&
+        window.location.pathname !== "/admin/marketing" &&
+        window.location.pathname !== "/admin/orders" &&
+        window.location.pathname !== "/admin/products" &&
+        window.location.pathname !== "/admin/reports" &&
+        (
+          
           <Header /> // Render header only on non-login/signup pages
         )}
       <Routes>
@@ -34,12 +48,13 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/shop/:id" element={<DetailPage />} />
         {/* Routes for Admin Side  */}
-
-        
-        
-        {/* Admin Login Routes  */}
-        {/* <Route path="/login-admin" element={<Login />} /> */}
-        {/* nested routes for homepage  */}
+        <Route path="/" element={<Layout />}>
+          <Route index path="admin/dashboard" element={<Dashboard />} />
+          <Route path="admin/marketing" element={<Marketing />} />
+          <Route path="admin/orders" element={<Orders/>} />
+          <Route path="admin/products" element={<Products/>} />
+          <Route path="admin/reports" element={<Reports/>} />
+        </Route>
         <Route path="/" element={<Home />}>
           <Route index element={<Headphones />} />
           <Route path="/headbands" element={<Headbands />} />
