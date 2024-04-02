@@ -13,15 +13,17 @@ import About from "./Components/Pages/About/About.jsx";
 import Contact from "./Components/Pages/Contact/Contact.jsx";
 import Error from "./Components/Pages/Error/Error.jsx";
 import DetailPage from "./Components/Pages/Home/DetailPage.jsx";
-import Layout from "./Components/Admin/Layout.jsx"
 
 const App = () => {
   return (
     <>
       {/* <Header /> */}
-      <Outlet />
+      {/* <Outlet /> */}
       {/* Routes  */}
-      {window.location.pathname !== '/login' && window.location.pathname !== '/signup' && window.location.pathname !== '/admin-panel' && (
+      {window.location.pathname !== "/login" &&
+        window.location.pathname !== "/signup" &&
+        window.location.pathname !== "/admin" &&
+        location.pathname !== "/login-admin" && (
           <Header /> // Render header only on non-login/signup pages
         )}
       <Routes>
@@ -30,8 +32,13 @@ const App = () => {
         <Route path="/shop" element={<Shop />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/shop/:id" element={<DetailPage/>} />
-        <Route path="/admin-panel" element={<Layout/>} />
+        <Route path="/shop/:id" element={<DetailPage />} />
+        {/* Routes for Admin Side  */}
+
+        
+        
+        {/* Admin Login Routes  */}
+        {/* <Route path="/login-admin" element={<Login />} /> */}
         {/* nested routes for homepage  */}
         <Route path="/" element={<Home />}>
           <Route index element={<Headphones />} />

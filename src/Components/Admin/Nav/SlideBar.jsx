@@ -9,13 +9,13 @@ import { MdOutlineBugReport } from "react-icons/md";
 const Navbar = () => {
   return (
     <>
-      <div className="bg-white flex flex-col justify-between w-[300px] h-screen p-8 shadow-lg">
-        <div className="flex justify-center items-center gap-4">
+      <div className=" bg-white flex flex-col  gap-[15vh] w-[300px] h-screen p-8 shadow-lg">
+        <div className="flex  items-center gap-4">
           <img src={Logo} className="w-[55px] h-[55px]" />
           <h1 className="font-semibold text-[2.3rem]">Audio</h1>
         </div>
-        <div className="flex justify-center items-center">
-          <ul className="flex flex-col gap-8 ">
+        <div className="pl-3">
+          <ul className="flex flex-col gap-6 ">
             {/* Dashboard  */}
             <li className="flex font-medium justify-start items-center gap-2 text-[1.2rem]">
               <LuLayoutDashboard />
