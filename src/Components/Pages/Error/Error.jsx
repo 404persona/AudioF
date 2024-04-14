@@ -11,7 +11,7 @@ const Error = () => {
             <h1>4</h1>
         </div>
         <div className='flex justify-center text-[1.5rem] font-semibold'>
-            404- Page Not Found
+             Page Not Found
         </div>
     </div>
     </div>

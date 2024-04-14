@@ -1,13 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import Header1 from "../../Header/Header1";
 import { Outlet } from "react-router-dom";
 import FearuredProducts from "./Products/FearuredProducts";
 import Search from "./Search";
 import Logo from "../../Header/Logo.png";
 import { motion } from "framer-motion";
+import {useSelector} from "react-redux"
 
-const Home = () => {
-  
+const Home = (props) => {
+  // const {UserData} = useContext(UserContext)
+  const {firstname} = useSelector((state)=>state.user)
+
   const charVariants = {
     hidden: { opacity: 0, transform: "translateY(50px)" }, // Adjust transform as needed
     visible: { opacity: 1, transform: "translateY(0)" },
@@ -22,8 +25,8 @@ const Home = () => {
   return (
     <>
       <div>
-      <motion.div
-          className="fixed top-0 left-0 w-full h-[100vh] bg-white/60 flex flex-col items-center justify-center backdrop-blur-lg z-10 "
+        <motion.div
+          className="fixed top-0 left-0 w-full h-[100vh] bg-white/50 flex flex-col items-center justify-center backdrop-blur-lg z-10 "
           initial={{
             y: "-100%",
           }}
@@ -53,7 +56,7 @@ const Home = () => {
             animate="visible"
             className="font-medium text-[2rem]"
           >
-            Hi,[FirstName]
+            {username}
           </motion.h1>
           <motion.h1
             variants={charVariants}
@@ -77,7 +80,6 @@ const Home = () => {
             <FearuredProducts />
           </div>
         </div>
-      
       </div>
     </>
   );

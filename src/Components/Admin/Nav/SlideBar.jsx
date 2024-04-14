@@ -5,16 +5,18 @@ import { SiGooglemarketingplatform } from "react-icons/si";
 import { BiPurchaseTagAlt } from "react-icons/bi";
 import { MdOutlineProductionQuantityLimits } from "react-icons/md";
 import { MdOutlineBugReport } from "react-icons/md";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <>
-      <div className="  bg-white flex flex-col gap-[15vh] w-[250px]  h-screen p-6 shadow-lg">
-        <div className="flex  items-center gap-4">
-          <img src={Logo} className="w-[45px] h-[45px]" />
-          <h1 className="font-bold text-[2rem]">Audio</h1>
-        </div>
+      <div className="   bg-white flex flex-col gap-[15vh] w-[250px]  h-screen p-6 shadow-lg">
+        <Link to="/admin">
+          <div className="flex   items-center gap-4">
+            <img src={Logo} className="w-[45px] h-[45px]" />
+            <h1 className="font-bold text-[2rem]">Audio</h1>
+          </div>
+        </Link>
         <div className="pl-2">
           <ul className="flex flex-col gap-6 ">
             {/* Dashboard  */}
@@ -24,7 +26,7 @@ const Navbar = () => {
                 style={({ isActive }) => ({
                   color: isActive ? "#0ACF83" : "#333",
                 })}
-                to="admin/dashboard"
+                to="dashboard"
               >
                 <LuLayoutDashboard />
                 Dashboard
@@ -37,7 +39,7 @@ const Navbar = () => {
                 style={({ isActive }) => ({
                   color: isActive ? "#0ACF83" : "#333",
                 })}
-                to="admin/marketing"
+                to="marketing"
               >
                 <SiGooglemarketingplatform />
                 Marketing
@@ -50,7 +52,7 @@ const Navbar = () => {
                 style={({ isActive }) => ({
                   color: isActive ? "#0ACF83" : "#333",
                 })}
-                to="admin/orders"
+                to="orders"
               >
                 <BiPurchaseTagAlt />
                 Orders
@@ -63,7 +65,7 @@ const Navbar = () => {
                 style={({ isActive }) => ({
                   color: isActive ? "#0ACF83" : "#333",
                 })}
-                to="admin/products"
+                to="products"
               >
                 <MdOutlineProductionQuantityLimits />
                 Products
@@ -76,7 +78,7 @@ const Navbar = () => {
                 style={({ isActive }) => ({
                   color: isActive ? "#0ACF83" : "#333",
                 })}
-                to="admin/reports"
+                to="reports"
               >
                 <MdOutlineBugReport />
                 Reports

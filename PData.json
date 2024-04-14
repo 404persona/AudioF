@@ -109,23 +109,16 @@
     ],
     "users":[
         {
-            "id":1,
-            "name":"Anas Ahmad",
-            "email":"anas1@gmail.com",
-            "password":"anas1"
+            "firstName":"Anas",
+            "lastName":"Ahmad",
+            "email":"anas@gmail.com",
+            "password":"anas"
         },
         {
-            "id":2,
-            "name":"Anas Ahmad",
-            "email":"anas2@gmail.com",
-            "password":"anas2"
-        },
-        {
-            "id":3,
-            "name":"Anas Ahmad",
-            "email":"anas3@gmail.com",
-            "password":"anas3"
+            "firstName":"Laiba",
+            "lastName":"Khan",
+            "email":"laiba@gmail.com",
+            "password":"laiba"
         }
-
     ]
 }

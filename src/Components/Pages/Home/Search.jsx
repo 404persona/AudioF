@@ -44,7 +44,7 @@ const Search = () => {
             <IoSearch className="text-gray-400 text-[1.7rem] relative left-[40px] " />
             <input
               type="Search"
-              className="outline-none border-gray-300 rounded-md p-1 border-[2px] w-[500px] h-[50px] pl-10 focus:border-green-500 transition-all"
+              className="outline-none border-gray-300 rounded-md p-1 border-[2px] w-[500px] h-[50px] pl-10 focus:border-green-10 transition-all"
               placeholder="Search Headphone"
             />
           </div>

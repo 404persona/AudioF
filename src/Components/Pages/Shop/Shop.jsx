@@ -22,34 +22,34 @@ const Shop = () => {
       <div className=" bg-[#F6F6F6] flex flex-wrap justify-center  gap-4">
         {products.map((product) => (
           <motion.div
-          initial={{
-            y:'50px',
-            opacity:0
-          }}
-          animate={{
-            y:'0px',
-            opacity:1
-          }}
-          transition={{
-            duration:.5,
-            ease:'easeIn'
-          }}
+            initial={{
+              y: "50px",
+              opacity: 0,
+            }}
+            animate={{
+              y: "0px",
+              opacity: 1,
+            }}
+            transition={{
+              duration: 0.7,
+              ease: "easeIn",
+            }}
           >
             <Link
-            key={product.id}
-            to={`/shop/${product.id}`}
-            className="cursor-pointer w-[380px] bg-white flex flex-col rounded-xl items-center relative top-[100px]"
-          >
-            <div>
-              <img src={product.image} className="w-[250px] h-[250px]" />
-            </div>
-            <div>
-              <h1 className="font-semibold text-[1.4rem]">{product.Name}</h1>
-            </div>
-            <div>
-              <h1 className="font-medium text-[1.2rem]">$ {product.Price}</h1>
-            </div>
-          </Link>
+              // key={product.id}
+              to={`/shop/${product.id}`}
+              className="cursor-pointer w-[380px] bg-white flex flex-col rounded-xl items-center relative top-[100px]"
+            >
+              <div>
+                <img src={product.image} className="w-[250px] h-[250px]" />
+              </div>
+              <div>
+                <h1 className="font-semibold text-[1.4rem]">{product.Name}</h1>
+              </div>
+              <div>
+                <h1 className="font-medium text-[1.2rem]">$ {product.Price}</h1>
+              </div>
+            </Link>
           </motion.div>
         ))}
       </div>

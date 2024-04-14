@@ -16,10 +16,10 @@ import DetailPage from "./Components/Pages/Home/DetailPage.jsx";
 import Layout from "./Components/Admin/Layout.jsx";
 import Dashboard from "./Components/Admin/Pages/Dashboard.jsx";
 import Marketing from "./Components/Admin/Pages/Marketing.jsx";
-import Orders from "./Components/Admin/Pages/Orders.jsx"
-// import Orders from "./Components/Admin/Pages/Products.jsx"
+import Orders from "./Components/Admin/Pages/Orders.jsx";
 import Products from "./Components/Admin/Pages/Products.jsx";
 import Reports from "./Components/Admin/Pages/Reports.jsx";
+import Login from "./Components/Admin/Login.jsx";
 
 const App = () => {
   return (
@@ -30,31 +30,32 @@ const App = () => {
       {window.location.pathname !== "/login" &&
         window.location.pathname !== "/signup" &&
         window.location.pathname !== "/admin" &&
-        window.location.pathname !== "/admin" &&
         window.location.pathname !== "/admin/dashboard" &&
         window.location.pathname !== "/admin/marketing" &&
         window.location.pathname !== "/admin/orders" &&
         window.location.pathname !== "/admin/products" &&
-        window.location.pathname !== "/admin/reports" &&
-        (
-          
+        window.location.pathname !== "/admin-login" &&
+        window.location.pathname !== "/admin/reports" && (
           <Header /> // Render header only on non-login/signup pages
         )}
       <Routes>
+        <Route path="/admin-login" element={<Login />} />
+        <Route path="/admin/" element={<Layout />}>
+          <Route index element={<Dashboard/>} />
+          <Route  path="dashboard" element={<Dashboard />} />
+          <Route path="marketing" element={<Marketing />} />
+          <Route path="orders" element={<Orders />} />
+          <Route path="products" element={<Products />} />
+          <Route path="reports" element={<Reports />} />
+        </Route>
         <Route path="/login" element={<LogIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/shop/:id" element={<DetailPage />} />
+        <Route path="/shop/:productId" element={<DetailPage />} />
         {/* Routes for Admin Side  */}
-        <Route path="/" element={<Layout />}>
-          <Route index path="admin/dashboard" element={<Dashboard />} />
-          <Route path="admin/marketing" element={<Marketing />} />
-          <Route path="admin/orders" element={<Orders/>} />
-          <Route path="admin/products" element={<Products/>} />
-          <Route path="admin/reports" element={<Reports/>} />
-        </Route>
+
         <Route path="/" element={<Home />}>
           <Route index element={<Headphones />} />
           <Route path="/headbands" element={<Headbands />} />
