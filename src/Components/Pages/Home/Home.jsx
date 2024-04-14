@@ -7,9 +7,9 @@ import Logo from "../../Header/Logo.png";
 import { motion } from "framer-motion";
 import {useSelector} from "react-redux"
 
-const Home = (props) => {
+const Home = () => {
   // const {UserData} = useContext(UserContext)
-  const {firstname} = useSelector((state)=>state.user)
+  // const {firstname} = useSelector((state)=>state.user)
 
   const charVariants = {
     hidden: { opacity: 0, transform: "translateY(50px)" }, // Adjust transform as needed
@@ -56,7 +56,7 @@ const Home = (props) => {
             animate="visible"
             className="font-medium text-[2rem]"
           >
-            {username}
+            Hi,
           </motion.h1>
           <motion.h1
             variants={charVariants}
