@@ -10,7 +10,7 @@ import { Link, NavLink } from "react-router-dom";
 const Navbar = () => {
   return (
     <>
-      <div className="   bg-white flex flex-col gap-[15vh] w-[250px]  h-screen p-6 shadow-lg">
+      <div className="   bg-white flex flex-col gap-[15vh] w-[250px]  h-screen p-6">
         <Link to="/admin">
           <div className="flex   items-center gap-4">
             <img src={Logo} className="w-[45px] h-[45px]" />

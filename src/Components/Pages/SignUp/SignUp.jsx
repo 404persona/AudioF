@@ -4,6 +4,7 @@ import { FaFacebookF } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   // const [profile, setprofile] = useState("");
@@ -11,6 +12,7 @@ const SignUp = () => {
   const [lastname, setlastname] = useState("");
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
+  const navigate = useNavigate()
   // const [confirmpassword, setconfirmpassword] = useState("");
 
   const SignUpHandler = async (e) => {
@@ -24,6 +26,7 @@ const SignUp = () => {
       });
       if ((response.status = 201)) {
         console.log("User Registered");
+        navigate("/login");
       } else {
         console.error("Error registering user:", response.statusText);
       }

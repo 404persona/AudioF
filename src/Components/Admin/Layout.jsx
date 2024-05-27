@@ -4,12 +4,12 @@ import { Outlet } from "react-router-dom";
 const Layout = () => {
   return (
     <>
-      <div className=" overflow-hidden bg-[#F6F6F6]">
+      <div className="bg-[#F6F6F6]">
         <div className="flex">
-          <div>
+          <div className="fixed shadow-lg">
             <Slidebar />
           </div>
-          <div className="m-8">
+          <div className=" w-full h-full  m-8 ml-[280px]">
             <Outlet />
           </div>
         </div>

@@ -17,35 +17,27 @@ import Layout from "./Components/Admin/Layout.jsx";
 import Dashboard from "./Components/Admin/Pages/Dashboard.jsx";
 import Marketing from "./Components/Admin/Pages/Marketing.jsx";
 import Orders from "./Components/Admin/Pages/Orders.jsx";
-import Products from "./Components/Admin/Pages/Products.jsx";
+import Products from "./Components/Admin/Pages/Product/Products.jsx";
 import Reports from "./Components/Admin/Pages/Reports.jsx";
 import Login from "./Components/Admin/Login.jsx";
+import AddProducts from "./Components/Admin/Pages/Product/AddProducts.jsx";
 
 const App = () => {
   return (
     <>
-      {/* <Header /> */}
+      {window.location.pathname.indexOf("/admin") === -1 && <Header />}
       <Outlet />
-      {/* Routes  */}
-      {window.location.pathname !== "/login" &&
-        window.location.pathname !== "/signup" &&
-        window.location.pathname !== "/admin" &&
-        window.location.pathname !== "/admin/dashboard" &&
-        window.location.pathname !== "/admin/marketing" &&
-        window.location.pathname !== "/admin/orders" &&
-        window.location.pathname !== "/admin/products" &&
-        window.location.pathname !== "/admin-login" &&
-        window.location.pathname !== "/admin/reports" && (
-          <Header /> // Render header only on non-login/signup pages
-        )}
       <Routes>
         <Route path="/admin-login" element={<Login />} />
         <Route path="/admin/" element={<Layout />}>
-          <Route index element={<Dashboard/>} />
-          <Route  path="dashboard" element={<Dashboard />} />
+          <Route index element={<Dashboard />} />
+          <Route path="dashboard" element={<Dashboard />} />
           <Route path="marketing" element={<Marketing />} />
           <Route path="orders" element={<Orders />} />
-          <Route path="products" element={<Products />} />
+          <Route path="products">
+            <Route path="" element={<Products />} />
+            <Route path="addproducts" element={<AddProducts />} />
+          </Route>
           <Route path="reports" element={<Reports />} />
         </Route>
         <Route path="/login" element={<LogIn />} />

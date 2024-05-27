@@ -6,52 +6,65 @@ import { Link } from "react-router-dom";
 
 const Shop = () => {
   const [products, setProducts] = useState([]);
+
   useEffect(() => {
     const FetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/products");
+        const response = await axios.get(
+          "http://localhost:4000/api/user/getproducts/"
+        );
         setProducts(response.data);
+        console.log(response.data);
       } catch (error) {
         console.log(error);
       }
     };
     FetchData();
   }, []);
+  const baseUrl = "http://localhost:4000/uploads/";
   return (
     <>
-      <div className=" bg-[#F6F6F6] flex flex-wrap justify-center  gap-4">
-        {products.map((product) => (
-          <motion.div
+      <div className="  p-1 ">
+        {/* Product Cards Code  */}
+        {products && products.length > 0 && (
+          <motion.ul
             initial={{
-              y: "50px",
               opacity: 0,
+              y: "50px",
             }}
             animate={{
-              y: "0px",
               opacity: 1,
+              y: "0px",
             }}
             transition={{
-              duration: 0.7,
-              ease: "easeIn",
+              duration: 3,
+              ease: [0.2, 1, 0.2, 1],
             }}
+            className="flex flex-wrap gap-4 justify-center "
           >
-            <Link
-              // key={product.id}
-              to={`/shop/${product.id}`}
-              className="cursor-pointer w-[380px] bg-white flex flex-col rounded-xl items-center relative top-[100px]"
-            >
-              <div>
-                <img src={product.image} className="w-[250px] h-[250px]" />
-              </div>
-              <div>
-                <h1 className="font-semibold text-[1.4rem]">{product.Name}</h1>
-              </div>
-              <div>
-                <h1 className="font-medium text-[1.2rem]">$ {product.Price}</h1>
-              </div>
-            </Link>
-          </motion.div>
-        ))}
+            {products.map((product) => (
+              <Link
+                to={`/shop/${product._id}`}
+                className="relative top-[110px] border-[1.3px] p-1 rounded-xl w-[300px]"
+              >
+                <div className="bg-white p-3 rounded-xl">
+                  <div className="flex flex-col  justify-center ">
+                    <div key={product.id}>
+                      <img
+                        src={`${baseUrl}${product.image[0]}`}
+                        className="w-[280px] h-[250px] object-cover"
+                      />
+                    </div>
+                    <div className="mt-2">
+                      <div className="text-[1.1rem]">{product.name}</div>
+                      <div className="font-semibold">$ {product.price}</div>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </motion.ul>
+        )}
       </div>
       <motion.div
         className="fixed top-0 left-0 w-full h-[100vh] bg-white/60 flex flex-col items-center justify-center backdrop-blur-lg z-10 "
