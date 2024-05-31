@@ -30,7 +30,7 @@ const About = () => {
             </h1>
           </motion.div>
           <div>
-            <div className="flex justify-center flex-col">
+            <div className="flex justify-center max-sm:flex-col md:gap-4 ">
               <div className=" w-[450px] h-[300px] max-sm:w-[350px] rounded-2xl max-sm:h-[200px] flex flex-col justify-end mb-4" style={{
                 backgroundImage : `url(https://images.pexels.com/photos/459728/pexels-photo-459728.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)`,
                 backgroundOrigin: "border-box",
@@ -38,7 +38,7 @@ const About = () => {
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "Cover",
               }}>
-             <div className="bg-black/40 rounded-2xl w-full h-[200px] flex items-end">
+             <div className="bg-black/40 rounded-2xl w-full max-sm:h-[200px] h-[300px] flex items-end">
              <h1 className="  text-white max-sm:text-[1.5rem]  text-[2rem] p-4 font-semibold">Our Industries</h1>
              </div>
               </div>
@@ -48,8 +48,9 @@ const About = () => {
                 backgroundPosition: "Center",
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "Cover",
-              }}>
-             <div className="bg-black/40 rounded-2xl w-full h-[200px] flex items-end">
+              }}
+              >
+             <div className="bg-black/40 rounded-2xl w-full max-sm:h-[200px] h-[300px] flex items-end">
              <h1 className="  text-white max-sm:text-[1.5rem]  text-[2rem] p-4 font-semibold">Our Production House</h1>
              </div>
               </div>

@@ -41,10 +41,12 @@ const Login = () => {
           "Email or password is empty. Please fill in both fields."
         );
       }
+      const token = response.data.token;
+      const UserData = response.data.user;
       if ((response.status = 201)) {
-        const token = response.data.token;
-        const UserData = response.data.user;
         localStorage.setItem("jwtToken", token);
+        localStorage.setItem('login', true)
+        // localstorage.getItem('User', User)
         console.log("User Login Success", token);
         setLoginState(true);
         navigate("/", { state: { UserData } });
@@ -65,7 +67,7 @@ const Login = () => {
           backgroundRepeat: "no-repeat",
           backgroundSize: "Cover",
         }}
-        className="w-full h-full"
+        className="w-full  h-screen"
       >
         <div className="w-full h-full bg-gradient-to-br from-emerald-500/50 to-slate-900/50 flex flex-col justify-center items-center text-center ">
           <div className="text-white  leading-tight">
@@ -109,7 +111,7 @@ const Login = () => {
                 <button
                   // onClick={LoginHandler}
                   type="submit"
-                  className="bg-[#0ACF83] p-2 max-sm:w-[200px] rounded md:w-[270px] font-semibold mt-4"
+                  className="bg-[#0ACF83] p-2 max-sm:w-[230px] relative md:ml-4 max-sm:ml-1 rounded md:w-[270px] font-semibold mt-4"
                 >
                   Sign In
                 </button>

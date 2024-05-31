@@ -1,12 +1,34 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Header1 from "../../Header/Header1";
-import { Outlet } from "react-router-dom";
+import { Outlet, useParams } from "react-router-dom";
 import FearuredProducts from "./Products/FearuredProducts";
 import Search from "./Search";
 import Logo from "../../Header/Logo.png";
 import { motion } from "framer-motion";
+// import AuthContext from "../../../AuthContext";
+
 // import { useSelector } from "react-redux";
 const Home = () => {
+  // const { isloggedIn, userData } = useContext(AuthContext);
+  const [userData, setuserData] = useState(null)
+  const {userId} = useParams()
+  useEffect(()=>{
+    const storedAccessToken = localStorage.getItem('accessToken')
+    if (storedAccessToken) {
+      const fetchUserData = async () => {
+      
+        try {
+          const response = await axios.get(`https://localhost:4000/api/user/getuser/${userId}`, {
+            headers: { Authorization: `Bearer ${storedAccessToken}` },
+          });
+          setUserData(response.data);
+        } catch (error) {
+          console.error('Error fetching user data:', error);
+        }
+      };
+      fetchUserData();
+    }
+  },[userId])
   const charVariants = {
     hidden: { opacity: 0, transform: "translateY(70px)" },
     visible: { opacity: 1, transform: "translateY(0px)" },
@@ -51,7 +73,7 @@ const Home = () => {
               animate="visible"
               className="font-normal md:text-[2rem] max-sm:text-[1.4rem]"
             >
-              Hi, [Username]
+              <h1>Hi, [Name]</h1>
             </motion.h1>
             <motion.h1
               variants={charVariants}
@@ -77,9 +99,7 @@ const Home = () => {
               <div>
                 <Outlet />
               </div>
-              <div>
-                <FearuredProducts />
-              </div>
+              <div>{/* <FearuredProducts /> */}</div>
             </div>
           </div>
         </div>

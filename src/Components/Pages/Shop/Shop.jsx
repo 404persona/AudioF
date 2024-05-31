@@ -21,7 +21,7 @@ const Shop = () => {
     };
     FetchData();
   }, []);
-  const baseUrl = "http://localhost:4000/uploads/";
+  const baseUrl = "http://localhost:4000/uploads/products/";
   return (
     <>
       <div className="  p-1 ">

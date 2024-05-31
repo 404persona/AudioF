@@ -2,9 +2,10 @@ import React from "react";
 import Logo from "./Logo.png";
 import Menu from "./Menu";
 import HamBurger from "./HamBurger";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
+
   return (
     <div className="max-sm:flex max-sm:justify-center">
       <div className="w-screen fixed bg-white/70 backdrop-blur-xl md:py-4 max-sm:py-3 z-10">

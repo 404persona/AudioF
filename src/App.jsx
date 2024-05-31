@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import LogIn from "./Components/Pages/Login/LogIn";
 import SignUp from "./Components/Pages/SignUp/SignUp";
 import Home from "./Components/Pages/Home/Home";
 import Header from "./Components/Header/Header";
-import { Routes, Route, Outlet } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Headphones from "./Components/Pages/Home/Products/Headphones/Headphones.jsx";
 import Headbands from "./Components/Pages/Home/Products/Headbands/Headbands.jsx";
 import Earpads from "./Components/Pages/Home/Products/Earpads/Earpads.jsx";
@@ -19,16 +19,23 @@ import Marketing from "./Components/Admin/Pages/Marketing.jsx";
 import Orders from "./Components/Admin/Pages/Orders.jsx";
 import Products from "./Components/Admin/Pages/Product/Products.jsx";
 import Reports from "./Components/Admin/Pages/Reports.jsx";
-import Login from "./Components/Admin/Login.jsx";
 import AddProducts from "./Components/Admin/Pages/Product/AddProducts.jsx";
+import Protected from "./Components/Pages/Protected.jsx";
+import Blogs from "./Components/Admin/Pages/Blogs/Blogs.jsx";
+// import DarkModeToggle from "./DarkModeToggle.jsx";
+import AddBlogs from './Components/Admin/Pages/Blogs/AddBlogs';
 
 const App = () => {
+  const location = useLocation();
+  const shouldHideHeader =
+    location.pathname.startsWith("/login") ||
+    location.pathname.startsWith("/signup") ||
+    location.pathname.startsWith("/admin");
   return (
     <>
-      {window.location.pathname.indexOf("/admin") === -1 && <Header />}
-      <Outlet />
+      {!shouldHideHeader && <Header />}
+
       <Routes>
-        <Route path="/admin-login" element={<Login />} />
         <Route path="/admin/" element={<Layout />}>
           <Route index element={<Dashboard />} />
           <Route path="dashboard" element={<Dashboard />} />
@@ -38,17 +45,22 @@ const App = () => {
             <Route path="" element={<Products />} />
             <Route path="addproducts" element={<AddProducts />} />
           </Route>
+          <Route path="blogs">
+            <Route path="" element={<Blogs/>} />
+            <Route path="upload-blogs" element={<AddBlogs/>}/>
+          </Route>
           <Route path="reports" element={<Reports />} />
         </Route>
+        {/* {isAdminPage && <Header/>} */}
+
         <Route path="/login" element={<LogIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/shop/:productId" element={<DetailPage />} />
-        {/* Routes for Admin Side  */}
-
-        <Route path="/" element={<Home />}>
+        {/* {/* Routes for Admin Side  */}
+        <Route path="/" element={<Protected Component={Home} />}>
           <Route index element={<Headphones />} />
           <Route path="/headbands" element={<Headbands />} />
           <Route path="/earpads" element={<Earpads />} />

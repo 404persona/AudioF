@@ -24,7 +24,7 @@ const DetailPage = () => {
 
     fetchData();
   }, [productId]);
-  const BaseUrl = "http://localhost:4000/uploads/";
+  const BaseUrl = "http://localhost:4000/uploads/products/";
   if (error) {
     return <div>Error fetching product details: {error.message}</div>;
   }

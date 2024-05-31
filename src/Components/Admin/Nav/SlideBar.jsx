@@ -6,6 +6,8 @@ import { BiPurchaseTagAlt } from "react-icons/bi";
 import { MdOutlineProductionQuantityLimits } from "react-icons/md";
 import { MdOutlineBugReport } from "react-icons/md";
 import { Link, NavLink } from "react-router-dom";
+import { IoDocumentTextOutline } from "react-icons/io5";
+
 
 const Navbar = () => {
   return (
@@ -71,6 +73,19 @@ const Navbar = () => {
                 Products
               </NavLink>
             </li>
+            {/* Blogs  */}
+            <li className="flex font-medium justify-start items-center gap-2 text-[1.2rem]">
+              <NavLink
+                className="flex font-medium justify-start items-center gap-2 text-[1.2rem]"
+                style={({ isActive }) => ({
+                  color: isActive ? "#0ACF83" : "#333",
+                })}
+                to="blogs"
+              >
+               <IoDocumentTextOutline />
+                Blogs
+              </NavLink>
+            </li>
             {/* Reports  */}
             <li className="flex font-medium justify-start items-center gap-2 text-[1.2rem]">
               <NavLink
@@ -84,6 +99,7 @@ const Navbar = () => {
                 Reports
               </NavLink>
             </li>
+           
           </ul>
         </div>
       </div>

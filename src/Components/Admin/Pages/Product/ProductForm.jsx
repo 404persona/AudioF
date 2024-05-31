@@ -124,17 +124,19 @@ const ProductForm = () => {
             />
           </div>
         </div>
-        <button
-          type="submit"
-          className="bg-green-400 text-white p-[7px] font-medium rounded-lg mt-4 flex shadow-md"
-        >
-          Upload Product
-        </button>
+        <div className="flex justify-end">
+          <button
+            type="submit"
+            className=" bg-green-400 text-white p-[7px] font-medium rounded-lg mt-4 flex shadow-md"
+          >
+            Upload Product
+          </button>
+        </div>
       </form>
       <div>
         <Snackbar
           open={toast}
-          autoHideDuration={1000}
+          autoHideDuration={1500}
           onClose={handletoast}
           anchorOrigin={{ vertical: "top", horizontal: "center" }}
         >
@@ -144,5 +146,4 @@ const ProductForm = () => {
     </div>
   );
 };
-
 export default ProductForm;

@@ -35,7 +35,7 @@ const Products = () => {
       setIsLoading(false); // Set loading state to false even in case of errors
     }
   };
-  const baseUrl = "http://localhost:4000/uploads/";
+  const baseUrl = "http://localhost:4000/uploads/products/";
   if (isLoading) {
     return <h1>Loading...</h1>;
   }
