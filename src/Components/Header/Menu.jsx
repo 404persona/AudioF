@@ -13,7 +13,7 @@ const Menu = () => {
             style={({ isActive }) => ({
               color: isActive ? "#0ACF83" : "#333",
             })}
-            className="text-[3rem] font-medium mb-2"
+            className="text-[2.8rem] font-medium mb-2"
           >
             <motion.h4
        initial={{
@@ -33,7 +33,7 @@ const Menu = () => {
           style={({ isActive }) => ({
             color: isActive ? "#0ACF83" : "#333",
           })}
-          className="text-[3rem] font-medium mb-2"
+          className="text-[2.8rem] font-medium mb-2"
         >
           Shop
         </NavLink>
@@ -41,8 +41,17 @@ const Menu = () => {
           style={({ isActive }) => ({
             color: isActive ? "#0ACF83" : "#333",
           })}
+          to="/blogs"
+          className="text-[2.8rem] font-medium mb-2"
+        >
+          Blogs
+        </NavLink>
+        <NavLink
+          style={({ isActive }) => ({
+            color: isActive ? "#0ACF83" : "#333",
+          })}
           to="/about"
-          className="text-[3rem] font-medium mb-2"
+          className="text-[2.8rem] font-medium mb-2"
         >
           About
         </NavLink>
@@ -51,10 +60,11 @@ const Menu = () => {
             color: isActive ? "#0ACF83" : "#333",
           })}
           to="/contact"
-          className="text-[3rem] font-medium mb-2"
+          className="text-[2.8rem] font-medium mb-2"
         >
           Contact
         </NavLink>
+       
       </div>
     </div>
   );

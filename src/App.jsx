@@ -21,9 +21,10 @@ import Products from "./Components/Admin/Pages/Product/Products.jsx";
 import Reports from "./Components/Admin/Pages/Reports.jsx";
 import AddProducts from "./Components/Admin/Pages/Product/AddProducts.jsx";
 import Protected from "./Components/Pages/Protected.jsx";
-import Blogs from "./Components/Admin/Pages/Blogs/Blogs.jsx";
+import AdminBlogs from "./Components/Admin/Pages/Blogs/AdminBlogs.jsx";
 // import DarkModeToggle from "./DarkModeToggle.jsx";
 import AddBlogs from './Components/Admin/Pages/Blogs/AddBlogs';
+import Blogs from './Components/Pages/Blogs/Blogs';
 
 const App = () => {
   const location = useLocation();
@@ -33,6 +34,7 @@ const App = () => {
     location.pathname.startsWith("/admin");
   return (
     <>
+    {/* <marquee behavior="" direction="">A Man Will Die || But Not His Idea</marquee> */}
       {!shouldHideHeader && <Header />}
 
       <Routes>
@@ -46,7 +48,7 @@ const App = () => {
             <Route path="addproducts" element={<AddProducts />} />
           </Route>
           <Route path="blogs">
-            <Route path="" element={<Blogs/>} />
+            <Route path="" element={<AdminBlogs/>} />
             <Route path="upload-blogs" element={<AddBlogs/>}/>
           </Route>
           <Route path="reports" element={<Reports />} />
@@ -58,6 +60,7 @@ const App = () => {
         <Route path="/shop" element={<Shop />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/blogs" element={<Blogs />} />
         <Route path="/shop/:productId" element={<DetailPage />} />
         {/* {/* Routes for Admin Side  */}
         <Route path="/" element={<Protected Component={Home} />}>
