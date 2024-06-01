@@ -20,9 +20,10 @@ const BlogForm = () => {
       selector: "#myEditor",
       setup: (editor) => {
         editor.on("Change", handleEditorChange);
+        // tinymce.activeEditor.getContent({format : 'html'})
         if (Content) {
           const convertedHtml = marked(Content);
-          console.log(convertedHtml); // Inspect the generated HTML
+          console.log(convertedHtml);
           editor.setContent(convertedHtml, { format: "html" });
         }
       },
@@ -64,7 +65,6 @@ const BlogForm = () => {
       console.log(response.data);
       formRef.current.reset();
       if (response.status === 200 || response.status === 201) {
-        // Success condition
         formRef.current.reset();
         setTitle("");
         setContent("");
@@ -104,7 +104,7 @@ const BlogForm = () => {
             onChange={(e) => setTitle(e.target.value)}
           />
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col" ref={formRef}>
           <label className="pb-1 pl-1">Content:</label>
           <textarea
             type="text"
