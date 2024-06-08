@@ -25,6 +25,7 @@ import AdminBlogs from "./Components/Admin/Pages/Blogs/AdminBlogs.jsx";
 // import DarkModeToggle from "./DarkModeToggle.jsx";
 import AddBlogs from './Components/Admin/Pages/Blogs/AddBlogs';
 import Blogs from './Components/Pages/Blogs/Blogs';
+import DetailBlog from "./Components/Pages/Blogs/DetailBlog.jsx";
 
 const App = () => {
   const location = useLocation();
@@ -61,6 +62,7 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/blogs" element={<Blogs />} />
+        <Route path="/blogs/:BlogId" element={<DetailBlog/>} />
         <Route path="/shop/:productId" element={<DetailPage />} />
         {/* {/* Routes for Admin Side  */}
         <Route path="/" element={<Protected Component={Home} />}>

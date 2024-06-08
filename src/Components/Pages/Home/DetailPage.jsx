@@ -29,13 +29,13 @@ const DetailPage = () => {
     return <div>Error fetching product details: {error.message}</div>;
   }
 
-  if (!product) {
-    return (
-      <div className="loading-container">
-        <p>Loading product details...</p>
-      </div>
-    );
-  }
+    if (!product) {
+      return (
+        <div className="loading-container">
+          <p>Loading product details...</p>
+        </div>
+      );
+    }
   const animationVariants = {
     hidden: { y: "-100%", overflow: "hidden" },
     visible: { y: "0%", overflow: "auto" },

@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-// import { DeleteProduct } from "../../../../../../Server/Controllers/ProductControl";
-
 const Products = () => {
   const [Products, setProducts] = useState([]); // Set Users as an empty array initially
   const [isLoading, setIsLoading] = useState(true); // Set initial loading state to true
