@@ -8,7 +8,7 @@ const Blogs = () => {
   useEffect(() => {
     const FetchData = async () => {
       const response = await axios.get(
-        "http://localhost:4000/api/user/getblogs"
+        "http://localhost:4000/api/user/getblogs/"
       );
       setBlogs(response.data);
     };
@@ -21,7 +21,7 @@ const Blogs = () => {
       <div className="pt-[120px] w-full flex justify-center gap-3 flex-wrap">
         {Blogs.map((blogs) => (
           <div className=" w-[250px] rounded-lg shadow-2xl p-2">
-            <Link to={`/blogs/${blogs._id}}`}>
+            <Link to={`/blogs/${blogs._id}`}>
               <img
                 src={`${baseUrl}${blogs.featuredImage}`}
                 className="w-[300px]"

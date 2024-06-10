@@ -3,14 +3,14 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
 const DetailBlog = () => {
-  const { BlogId } = useParams();
-  const [blogs, setblogs] = useState('');
+  const { blogId } = useParams();
+  const [blogs, setblogs] = useState([]);
   const [error, seterror] = useState(null);
   useEffect(() => {
     const FetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4000/api/user/getblog/${BlogId}`
+          `http://localhost:4000/api/user/getblog/${blogId}`
         );
         setblogs(response.data);
       } catch (error) {
@@ -18,7 +18,7 @@ const DetailBlog = () => {
       }
     };
     FetchData();
-  }, [BlogId]);
+  }, [blogId]);
   if (error) {
     return <div>Error fetching Blogs: {error.message}</div>;
   }
@@ -29,11 +29,30 @@ const DetailBlog = () => {
       </div>
     );
   }
+  const baseUrl = "http://localhost:4000/uploads/blog/";
+
   return (
-    <div>
-     {blogs && (
-       <div>{blogs.title}</div>
-     )}
+    <div className="pt-[120px]">
+      {blogs && (
+        <div>
+          <div className="pb-6 text-center text-[2rem] font-semibold">
+            {blogs.title}
+          </div>
+          <div className="flex justify-center">
+            <img
+              src={`${baseUrl}${blogs.featuredImage}`}
+              className="center w-[900px] h-[600px]"
+            />
+          </div>
+          <p className="leading-relaxed p-8">
+            <div
+              dangerouslySetInnerHTML={{
+                __html: blogs.content,
+              }}
+            />
+          </p>
+        </div>
+      )}
     </div>
   );
 };

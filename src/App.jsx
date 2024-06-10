@@ -62,7 +62,7 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/blogs" element={<Blogs />} />
-        <Route path="/blogs/:BlogId" element={<DetailBlog/>} />
+        <Route path="/blogs/:blogId" element={<DetailBlog/>} />
         <Route path="/shop/:productId" element={<DetailPage />} />
         {/* {/* Routes for Admin Side  */}
         <Route path="/" element={<Protected Component={Home} />}>
