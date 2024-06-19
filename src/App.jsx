@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import LogIn from "./Components/Pages/Login/LogIn";
 import SignUp from "./Components/Pages/SignUp/SignUp";
 import Home from "./Components/Pages/Home/Home";
@@ -23,21 +23,41 @@ import AddProducts from "./Components/Admin/Pages/Product/AddProducts.jsx";
 import Protected from "./Components/Pages/Protected.jsx";
 import AdminBlogs from "./Components/Admin/Pages/Blogs/AdminBlogs.jsx";
 // import DarkModeToggle from "./DarkModeToggle.jsx";
-import AddBlogs from './Components/Admin/Pages/Blogs/AddBlogs';
-import Blogs from './Components/Pages/Blogs/Blogs';
+import AddBlogs from "./Components/Admin/Pages/Blogs/AddBlogs";
+import Blogs from "./Components/Pages/Blogs/Blogs";
 import DetailBlog from "./Components/Pages/Blogs/DetailBlog.jsx";
+import Loader from "./Loader.jsx";
+// import FullscreenAnimation from "./FullscreenAnimation.jsx";
+import { AnimatePresence, motion } from "framer-motion";
 
 const App = () => {
+  const [isLoading, setIsLoading] = useState(false); // Control loader visibility
   const location = useLocation();
+
+  const routesWithLoader = ["/","/shop", "/about", "/contact"]; // Add your specific routes here
+
+  useEffect(() => {
+    if (routesWithLoader.includes(location.pathname)) {
+      setIsLoading(true);
+      setTimeout(() => setIsLoading(false), 3000); // Simulate loading logic
+    }
+  }, [location.pathname]);
+
   const shouldHideHeader =
     location.pathname.startsWith("/login") ||
     location.pathname.startsWith("/signup") ||
     location.pathname.startsWith("/admin");
   return (
     <>
-    {/* <marquee behavior="" direction="">A Man Will Die || But Not His Idea</marquee> */}
+      {/* <marquee behavior="" direction="" className="bg-black text-white" >A Man Will Die || But Not His Idea</marquee> */}
       {!shouldHideHeader && <Header />}
-
+      <AnimatePresence>
+        {isLoading && (
+          <motion.div key="loader">
+            <Loader />
+          </motion.div>
+        )}
+      </AnimatePresence>
       <Routes>
         <Route path="/admin/" element={<Layout />}>
           <Route index element={<Dashboard />} />
@@ -49,20 +69,19 @@ const App = () => {
             <Route path="addproducts" element={<AddProducts />} />
           </Route>
           <Route path="blogs">
-            <Route path="" element={<AdminBlogs/>} />
-            <Route path="upload-blogs" element={<AddBlogs/>}/>
+            <Route path="" element={<AdminBlogs />} />
+            <Route path="upload-blogs" element={<AddBlogs />} />
           </Route>
           <Route path="reports" element={<Reports />} />
         </Route>
         {/* {isAdminPage && <Header/>} */}
-
         <Route path="/login" element={<LogIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/blogs" element={<Blogs />} />
-        <Route path="/blogs/:blogId" element={<DetailBlog/>} />
+        <Route path="/blogs/:blogId" element={<DetailBlog />} />
         <Route path="/shop/:productId" element={<DetailPage />} />
         {/* {/* Routes for Admin Side  */}
         <Route path="/" element={<Protected Component={Home} />}>

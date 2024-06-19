@@ -1,44 +1,53 @@
-import React from 'react'
-import {motion} from 'framer-motion'
-import Logo from "../../Header/Logo.png"
-// import Carousel from './Carousel'
+import React from "react";
 
 const Contact = () => {
   return (
-    <div>
-      
-      <div></div>
-      <motion.div 
-      className="fixed top-0 left-0 w-full h-[100vh] bg-white/60 flex flex-col items-center justify-center backdrop-blur-lg z-10 "
-      initial={{
-        y:'-100%'
-      }}
-      animate={{
-        y:'100%'
-      }}
-      transition={{
-        duration:3,
-        ease:[0.2, 1, 0.2, 1]
-      }}
-      onEnter={(element) => {
-        setTimeout(() => element.classList.remove('hold'), 1500); // Remove hold after 1.5s
-      }}
-      >
-        <img src={Logo} className="w-[150px] h-[150px]" />
-        <h1 className="text-[4rem] font-bold ml-4">Audio</h1>
-        {/* <div className="hold "></div> */}
-      </motion.div>
-      <div className='pt-[100px]'>
-        {/* <div>
-          <div className='w-[]'>
-            <div></div>
-            <div></div>
+    <div className="pt-[100px]">
+      <div>
+        <h1 className="text-[3rem] text-center font-semibold">Here to Help</h1>
+        <div className="flex md:w-[50%] justify-center">
+        <div className="flex flex-col p-4 gap-5 ">
+          <div className="flex flex-col w-[300px] gap-2">
+            <label>Full Name :</label>
+            <input
+              type="text"
+              placeholder="Enter Name Here"
+              className="outline-none border-[2px] border-gray-300 rounded-md p-1 focus:border-green-400"
+            />
           </div>
-        </div> */}
-        
+          <div className="flex flex-col w-[300px] gap-2">
+            <label>Email :</label>
+            <input
+              type="text"
+              placeholder="Enter Email Here"
+              className="outline-none border-[2px] border-gray-300 rounded-md p-1 focus:border-green-400"
+            />
+          </div>
+          <div className="flex flex-col w-[300px] gap-2">
+            <label>Message :</label>
+            <textarea
+              type="text"
+              placeholder="Enter Message Here"
+              className="outline-none border-[2px] border-gray-300 rounded-md p-1 focus:border-green-400 h-[150px] w-[300px]"
+            />
+          </div>
+          <div className="flex justify-center">
+            <button className="text-white text-[1rem] font-semibold bg-green-400 p-1 w-[150px] rounded-md">
+              Submit
+            </button>
+          </div>
+        </div>
+        </div>
+        <div>
+          <div className="w-[50%] h-screen bg-red-400">
+              <div>
+                
+              </div>
+          </div>
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;

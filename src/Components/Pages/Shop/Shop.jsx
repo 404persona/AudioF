@@ -66,7 +66,7 @@ const Shop = () => {
           </motion.ul>
         )}
       </div>
-      <motion.div
+      {/* <motion.div
         className="fixed top-0 left-0 w-full h-[100vh] bg-white/60 flex flex-col items-center justify-center backdrop-blur-lg z-10 "
         initial={{
           y: "-100%",
@@ -81,7 +81,7 @@ const Shop = () => {
       >
         <img src={Logo} className="w-[150px] h-[150px]" />
         <h1 className="text-[4rem] font-bold ml-4">Audio</h1>
-      </motion.div>
+      </motion.div> */}
     </>
   );
 };
