@@ -4,7 +4,7 @@ import { Outlet, useParams } from "react-router-dom";
 import FearuredProducts from "./Products/FearuredProducts";
 import Search from "./Search";
 import { motion } from "framer-motion";
-import UserContext from "../../../AuthContext";
+import UserContext from "../../../Context/AuthContext";
 import Loader from "../../../Loader";
 
 const Home = () => {

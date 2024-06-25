@@ -34,7 +34,7 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(false); // Control loader visibility
   const location = useLocation();
 
-  const routesWithLoader = ["/","/shop", "/about", "/contact"]; // Add your specific routes here
+  const routesWithLoader = ["/", "/shop", "/about", "/contact"]; // Add your specific routes here
 
   useEffect(() => {
     if (routesWithLoader.includes(location.pathname)) {
@@ -49,15 +49,15 @@ const App = () => {
     location.pathname.startsWith("/admin");
   return (
     <>
-      {/* <marquee behavior="" direction="" className="bg-black text-white" >A Man Will Die || But Not His Idea</marquee> */}
+
       {!shouldHideHeader && <Header />}
-      <AnimatePresence>
-        {isLoading && (
+      {/* <AnimatePresence>
+        {isLoading ? (
           <motion.div key="loader">
             <Loader />
           </motion.div>
-        )}
-      </AnimatePresence>
+        ):(<></>)}
+      </AnimatePresence> */}
       <Routes>
         <Route path="/admin/" element={<Layout />}>
           <Route index element={<Dashboard />} />
