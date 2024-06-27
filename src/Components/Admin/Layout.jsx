@@ -1,22 +1,20 @@
 import React from "react";
 import Slidebar from "./Nav/SlideBar";
-import { Outlet, Routes, Route, useLocation } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 const Layout = () => {
-  // const isAdminPage = window.location.pathname.startsWith("/admin");
- 
+
   return (
     <>
       <div className="bg-[#F6F6F6]">
         <div className="flex justify-between">
-          <div className=" shadow-lg">
+          <div className="fixed z-10 shadow-lg">
             <Slidebar />
           </div>
-          <div className=" w-full h-full m-6">
+          <div className="md:pl-[260px] w-full h-full m-6 bg-[#F6F6F6]">
             <Outlet />
           </div>
         </div>
       </div>
-     
     </>
   );
 };

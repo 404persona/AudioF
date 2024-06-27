@@ -48,7 +48,7 @@ const Search = () => {
           </div>
         </button>
         <motion.div
-          className="fixed top-0 left-0 z-50 h-screen w-screen backdrop-blur-lg md:bg-white/70 max-sm:bg-transparent overflow-hidden"
+          className="fixed top-0 left-0 z-50 h-screen w-screen backdrop-blur-lg md:bg-white/10 max-sm:bg-transparent overflow-hidden"
           variants={menuVariants}
           animate={isOpen ? "open" : "closed"}
           initial="closed"

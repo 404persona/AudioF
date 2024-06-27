@@ -29,6 +29,7 @@ import DetailBlog from "./Components/Pages/Blogs/DetailBlog.jsx";
 import Loader from "./Loader.jsx";
 // import FullscreenAnimation from "./FullscreenAnimation.jsx";
 import { AnimatePresence, motion } from "framer-motion";
+import Footer from "./Components/Footer/Footer.jsx";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(false); // Control loader visibility
@@ -47,17 +48,15 @@ const App = () => {
     location.pathname.startsWith("/login") ||
     location.pathname.startsWith("/signup") ||
     location.pathname.startsWith("/admin");
+  
+    const shouldHideFooter = shouldHideHeader
+
+    const showHomePageComponent = location.pathname === '/' || location.pathname === '/contact'
   return (
     <>
+    {/* <marquee className="font-bold" >Learning from the Best</marquee> */}
 
       {!shouldHideHeader && <Header />}
-      {/* <AnimatePresence>
-        {isLoading ? (
-          <motion.div key="loader">
-            <Loader />
-          </motion.div>
-        ):(<></>)}
-      </AnimatePresence> */}
       <Routes>
         <Route path="/admin/" element={<Layout />}>
           <Route index element={<Dashboard />} />
@@ -93,6 +92,7 @@ const App = () => {
         </Route>
         <Route path="*" element={<Error />} />
       </Routes>
+      {!shouldHideFooter && <Footer showSubscription={showHomePageComponent} />}
     </>
   );
 };

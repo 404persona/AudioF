@@ -12,7 +12,8 @@ import { IoDocumentTextOutline } from "react-icons/io5";
 const Navbar = () => {
   return (
     <>
-      <div className="   bg-white flex flex-col gap-[15vh] w-[250px]  h-screen p-6">
+      <div className="">
+      <div className="  bg-white flex flex-col gap-[15vh] w-[250px]  h-screen p-6">
         <Link to="/admin">
           <div className="flex   items-center gap-4">
             <img src={Logo} className="w-[45px] h-[45px]" />
@@ -102,6 +103,7 @@ const Navbar = () => {
            
           </ul>
         </div>
+      </div>
       </div>
     </>
   );

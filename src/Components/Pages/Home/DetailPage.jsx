@@ -107,7 +107,7 @@ const DetailPage = () => {
             <button className="hover:bg-green-400 w-[150px] border-[1.5px] border-green-400 hover:text-white font-semibold p-2 rounded-lg hover:shadow-md transition-all">
               Buy Now
             </button>
-            <p>{product.description}</p>
+            {/* <p>{product.description}</p> */}
           </div>
         </div>
       </div>

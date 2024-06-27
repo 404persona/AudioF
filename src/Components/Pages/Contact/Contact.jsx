@@ -1,5 +1,4 @@
 import React from "react";
-// import svg from "./svg.json"
 
 const Contact = () => {
   return (

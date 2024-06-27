@@ -41,15 +41,6 @@ const Menu = () => {
           style={({ isActive }) => ({
             color: isActive ? "#0ACF83" : "#333",
           })}
-          to="/blogs"
-          className="text-[2.8rem] font-medium mb-2"
-        >
-          Blogs
-        </NavLink>
-        <NavLink
-          style={({ isActive }) => ({
-            color: isActive ? "#0ACF83" : "#333",
-          })}
           to="/about"
           className="text-[2.8rem] font-medium mb-2"
         >

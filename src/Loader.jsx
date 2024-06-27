@@ -4,6 +4,8 @@ import Logo from "./Components/Header/Logo.png";
 
 const Loader = ({ duration = 100, onCountdownEnd }) => {
   const [isLoading, setIsLoading] = useState(true);
+  const [isExiting, setIsExiting] = useState(false);
+
   const [countdown, setCountdown] = useState(duration);
 
   useEffect(() => {
@@ -17,19 +19,20 @@ const Loader = ({ duration = 100, onCountdownEnd }) => {
       setIsLoading(false);
       if (onCountdownEnd) {
         onCountdownEnd();
+        setIsExiting(true);
       }
     }
-  }, [countdown, onCountdownEnd]);
+  }, [countdown, onCountdownEnd, isExiting]);
 
   return (
     <AnimatePresence>
-      {(isLoading || countdown <= 0) && (
+      {(isLoading || countdown <= 0 || isExiting) && (
         <motion.div
           key="loader"
           initial={{ y: "100%", opacity: 1 }}
           animate={{ y: "0%", opacity: 1 }}
           exit={{ y: "-100%", opacity: 0 }}
-          transition={{ duration: 0.8, ease: [0.455, 0.075, 0.0, 1.0] }}
+          transition={{ duration: 1, ease: [0.000, 0.515, 0.345, 0.980] }}
           className="fixed bottom-0 left-0 w-screen h-screen bg-white/50 z-50 backdrop-blur-lg flex justify-center items-center "
         >
           <div className="text-black text-xl font-bold">
@@ -46,5 +49,6 @@ const Loader = ({ duration = 100, onCountdownEnd }) => {
     </AnimatePresence>
   );
 };
+
 
 export default Loader;
