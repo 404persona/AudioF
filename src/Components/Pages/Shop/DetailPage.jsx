@@ -52,7 +52,7 @@ const DetailPage = () => {
 
   return (
     <div>
-      <motion.div
+      {/* <motion.div
         className="fixed top-0 left-0 w-full h-[100vh] bg-white/30 flex flex-col items-center justify-center backdrop-blur-lg z-10 "
         initial={{ y: "-100%" }}
         variants={animationVariants}
@@ -60,8 +60,8 @@ const DetailPage = () => {
       >
         <img src={Logo} className="w-[150px] h-[150px]" alt="Logo" />
         <h1 className="text-[4rem] font-bold ml-4">Audio</h1>
-      </motion.div>
-      <div className="pt-[150px] flex justify-evenly items-center">
+      </motion.div> */}
+      <div className="pt-[150px] flex justify-center gap-20 items-center">
         <div className="">
           <div className="flex gap-2 items-center flex-col-reverse">
             <div className="flex gap-1">
@@ -94,23 +94,25 @@ const DetailPage = () => {
           </div>
         </div>
 
-        <div className="flex flex-col gap-3 w-[600px]">
-          <h1 className="font-semibold text-[2.2rem]">{product.name}</h1>
-          <p className="text-[1.2rem]">{product.shortdescription}</p>
-          <div className="font-bold text-[1.4rem]">
-            $ {product.price.toFixed(2)}
-          </div>
-          <div className="flex gap-6">
-            <button className="bg-green-400 w-[150px] border-[1.5px] text-white font-semibold p-2 rounded-lg Hover:shadow-md hover:bg-transparent hover:border-green-400 hover:text-black transition-all ">
-              Add To Cart
-            </button>
-            <button className="hover:bg-green-400 w-[150px] border-[1.5px] border-green-400 hover:text-white font-semibold p-2 rounded-lg hover:shadow-md transition-all">
-              Buy Now
-            </button>
+        <div>
+          <div className="flex flex-col gap-2 ">
+            <h1 className="font-semibold text-[2.2rem]">{product.name}</h1>
+            <p className="text-[1.2rem]">{product.shortdescription}</p>
+            <div className="font-bold text-[1.4rem]">
+              $ {product.price.toFixed(2)}
+            </div>
+            <div className="flex gap-6">
+              <button className="bg-green-400 w-[150px] border-[1.5px] text-white font-semibold p-2 rounded-lg Hover:shadow-md hover:bg-transparent hover:border-green-400 hover:text-black transition-all ">
+                Add To Cart
+              </button>
+              <button className="hover:bg-green-400 w-[150px] border-[1.5px] border-green-400 hover:text-white font-semibold p-2 rounded-lg hover:shadow-md transition-all">
+                Buy Now
+              </button>
+            </div>
           </div>
         </div>
       </div>
-      
+
       {/* <div className="mt-10">
         <h2 className="font-semibold text-[1.8rem]">Reviews</h2>
         {product.reviews && product.reviews.length === 0 && <p>No reviews yet</p>}

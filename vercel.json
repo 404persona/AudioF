@@ -1,0 +1,19 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "AudioF/package.json",
+        "use": "@vercel/static-build",
+        "config": {
+          "distDir": "AudioF/dist"
+        }
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/AudioF/index.html"
+      }
+    ]
+  }
+  
