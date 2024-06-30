@@ -36,6 +36,7 @@ const Search = () => {
       <div className="relative md:w-[50px] md:h-[50px] hamburger">
         {/* Class for click detection */}
         <button onClick={toggleMenu} className="focus:outline-none">
+<<<<<<< HEAD
           <motion.div 
           initial={{
             opacity:0,
@@ -48,6 +49,9 @@ const Search = () => {
             ease: "easeInOut"
           }}
           >
+=======
+          <div>
+>>>>>>> 8d7d9404128b1327d70a6ffbd071309cff800a82
             <div className="flex items-center  relative md:left-[-20px] max-sm:left-[-20px] top-6">
               <IoSearch className="text-gray-400 text-[1.7rem] relative left-[40px] " />
               <input
@@ -56,7 +60,11 @@ const Search = () => {
                 placeholder="Search Headphone"
               />
             </div>
+<<<<<<< HEAD
           </motion.div>
+=======
+          </div>
+>>>>>>> 8d7d9404128b1327d70a6ffbd071309cff800a82
         </button>
         <motion.div
           className="fixed top-0 left-0 z-50 h-screen w-screen backdrop-blur-lg md:bg-white/10 max-sm:bg-transparent overflow-hidden"
@@ -64,7 +72,11 @@ const Search = () => {
           animate={isOpen ? "open" : "closed"}
           initial="closed"
 
+<<<<<<< HEAD
         //   onClick={toggleMenu} // Close on menu click
+=======
+          //   onClick={toggleMenu} // Close on menu click
+>>>>>>> 8d7d9404128b1327d70a6ffbd071309cff800a82
         >
           <div className="md:pb-[400px] w-screen h-screen flex justify-center max-sm:items-start max-sm:mt-[150px]">
             <div className="flex justify-center items-center relative md:left-[-20px] md:top-6 max-sm:left-[-10px] ">

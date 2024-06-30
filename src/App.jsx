@@ -12,8 +12,12 @@ import Shop from "./Components/Pages/Shop/Shop.jsx";
 import About from "./Components/Pages/About/About.jsx";
 import Contact from "./Components/Pages/Contact/Contact.jsx";
 import Error from "./Components/Pages/Error/Error.jsx";
+<<<<<<< HEAD
 // import DetailPage from "./Components/Pages/Home/DetailPage.jsx";
 import DetailPage from "./Components/Pages/Shop/DetailPage.jsx"
+=======
+import DetailPage from "./Components/Pages/Home/DetailPage.jsx";
+>>>>>>> 8d7d9404128b1327d70a6ffbd071309cff800a82
 import Layout from "./Components/Admin/Layout.jsx";
 import Dashboard from "./Components/Admin/Pages/Dashboard.jsx";
 import Marketing from "./Components/Admin/Pages/Marketing.jsx";
@@ -93,7 +97,11 @@ const App = () => {
         </Route>
         <Route path="*" element={<Error />} />
       </Routes>
+<<<<<<< HEAD
       {/* {!shouldHideFooter && <Footer showSubscription={showHomePageComponent} />} */}
+=======
+      {!shouldHideFooter && <Footer showSubscription={showHomePageComponent} />}
+>>>>>>> 8d7d9404128b1327d70a6ffbd071309cff800a82
     </>
   );
 };

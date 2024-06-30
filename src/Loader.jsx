@@ -38,7 +38,11 @@ const Loader = ({ duration = 100, onCountdownEnd }) => {
           <div className="text-black text-xl font-bold">
             <div className="text-center flex flex-col justify-center gap-10 items-center">
               <img src={Logo} className="w-[100px] h-[100px]" alt="Logo" />
+<<<<<<< HEAD
               <h1 className="text-[3rem] font-bold ml-2 tracking-widest" >Audio</h1>
+=======
+              <h1 className="text-[3rem] font-bold ml-2">Audio</h1>
+>>>>>>> 8d7d9404128b1327d70a6ffbd071309cff800a82
               <div className="relative md:top-[150px] md:left-[550px] font-medium tracking-tighter">
                 {countdown > 0 ? countdown.toFixed(1) + "%" : "Let's Go"}
               </div>
