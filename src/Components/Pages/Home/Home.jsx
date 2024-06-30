@@ -129,11 +129,7 @@ const Home = () => {
                 <div>
                   <Outlet />
                 </div>
-<<<<<<< HEAD
                 <div><FearuredProducts /></div>
-=======
-                <div>{/* <FearuredProducts /> */}</div>
->>>>>>> 8d7d9404128b1327d70a6ffbd071309cff800a82
               </div>
             </div>
           </div>
