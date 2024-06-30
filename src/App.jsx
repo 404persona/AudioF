@@ -16,7 +16,7 @@ import Error from "./Components/Pages/Error/Error.jsx";
 // import DetailPage from "./Components/Pages/Home/DetailPage.jsx";
 import DetailPage from "./Components/Pages/Shop/DetailPage.jsx"
 =======
-import DetailPage from "./Components/Pages/Home/DetailPage.jsx";
+// import DetailPage from "./Components/Pages/Home/DetailPage.jsx";
 >>>>>>> 8d7d9404128b1327d70a6ffbd071309cff800a82
 import Layout from "./Components/Admin/Layout.jsx";
 import Dashboard from "./Components/Admin/Pages/Dashboard.jsx";
