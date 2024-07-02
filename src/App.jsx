@@ -94,7 +94,6 @@ const App = () => {
         </Route>
         <Route path="*" element={<Error />} />
       </Routes>
-      {/* {!shouldHideFooter && <Footer showSubscription={showHomePageComponent} />} */}
       {!shouldHideFooter && <Footer showSubscription={showHomePageComponent} />}
     </>
   );
