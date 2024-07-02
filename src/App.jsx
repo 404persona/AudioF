@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import LogIn from "./Components/Pages/Login/LogIn";
+// import './App.css'/
 import SignUp from "./Components/Pages/SignUp/SignUp";
 import Home from "./Components/Pages/Home/Home";
 import Header from "./Components/Header/Header";
@@ -31,6 +32,7 @@ import DetailBlog from "./Components/Pages/Blogs/DetailBlog.jsx";
 import Loader from "./Loader.jsx";
 // import FullscreenAnimation from "./FullscreenAnimation.jsx";
 import { AnimatePresence, motion } from "framer-motion";
+import ScrollContainer from "./ScrollContainer.jsx";
 import Footer from "./Components/Footer/Footer.jsx";
 
 const App = () => {
@@ -94,6 +96,7 @@ const App = () => {
         </Route>
         <Route path="*" element={<Error />} />
       </Routes>
+ 
       {!shouldHideFooter && <Footer showSubscription={showHomePageComponent} />}
     </>
   );

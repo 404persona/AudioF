@@ -1,0 +1,13 @@
+/* html, body {
+    height: 1000px;
+    overflow: hidden;
+  }
+  
+  [data-scroll-container] {
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  [data-scroll] {
+    transform-style: preserve-3d;
+  } */

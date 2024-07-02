@@ -71,9 +71,9 @@ const Home = () => {
       opacity: 1,
       transform: 'translateY(0px)',
       transition: {
-        delay: i * 0.15, // Check if delay values are logged here (optional)
-        duration: 1,
-        ease: [0.000, 0.515, 0.345, 0.980],
+        delay: i * 0.19, // Check if delay values are logged here (optional)
+        duration: .9,
+        ease: [0.090, 0.515, 0.345, 0.980],
       },
     }),
   };
