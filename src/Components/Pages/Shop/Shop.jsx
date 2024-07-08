@@ -24,7 +24,7 @@ const Shop = () => {
   const baseUrl = "http://localhost:4000/uploads/products/";
   return (
     <>
-      <div className="  p-1 ">
+      <div className="  p-1  pb-[200px]">
         {/* Product Cards Code  */}
         {products && products.length > 0 && (
           <motion.ul
@@ -40,12 +40,12 @@ const Shop = () => {
               duration: 3,
               ease: [0.2, 1, 0.2, 1],
             }}
-            className="flex flex-wrap gap-4 justify-center "
+            className="flex flex-wrap gap-4 justify-center  "
           >
             {products.map((product) => (
               <Link
                 to={`/shop/${product._id}`}
-                className="relative top-[110px] border-[1.3px] p-1 rounded-xl w-[300px]"
+                className="relative top-[110px] border-[1.3px] p-1 rounded-xl w-[300px] shadow-md hover:shadow-lg transition-all"
               >
                 <div className="bg-white p-3 rounded-xl">
                   <div className="flex flex-col  justify-center ">

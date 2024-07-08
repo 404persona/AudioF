@@ -10,7 +10,6 @@ const BlogForm = () => {
   const [AuthorEmail, setAuthorEmail] = useState("");
   const [FeaturedImage, setFeaturedImage] = useState(null);
   const [toast, settoast] = useState(false);
-  // const [htmlContent, setHtmlContent] = useState("");
   const formRef = useRef(null);
   const handleEditorChange = (e) => {
     setContent(e.target.getContent());

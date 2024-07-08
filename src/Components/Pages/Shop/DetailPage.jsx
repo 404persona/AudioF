@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Logo from "../../Header/Logo.png"; // Assuming Logo is an image
-import { useParams } from "react-router-dom";
+import { Link, Outlet, useParams } from "react-router-dom";
 import axios from "axios";
 import AddReview from './AddReview'; // Import the AddReview component
+import Description from './Description';
 
 const DetailPage = () => {
   const { productId } = useParams();
@@ -52,24 +53,15 @@ const DetailPage = () => {
 
   return (
     <div>
-      {/* <motion.div
-        className="fixed top-0 left-0 w-full h-[100vh] bg-white/30 flex flex-col items-center justify-center backdrop-blur-lg z-10 "
-        initial={{ y: "-100%" }}
-        variants={animationVariants}
-        transition={{ duration: 3, ease: [0.2, 1, 0.2, 1] }}
-      >
-        <img src={Logo} className="w-[150px] h-[150px]" alt="Logo" />
-        <h1 className="text-[4rem] font-bold ml-4">Audio</h1>
-      </motion.div> */}
       <div className="pt-[150px] flex justify-center gap-20 items-center">
-        <div className="">
+        <div>
           <div className="flex gap-2 items-center flex-col-reverse">
             <div className="flex gap-1">
               {product.image.map((image, index) => (
                 <div key={index}>
                   <motion.img
                     src={`${BaseUrl}${image}`}
-                    className={`w-[100px] border-[1px] p-2 rounded-xl hover:border-green-400 transition-colors h-[87px] 
+                    className={`w-[100px] border-[1px] p-2 rounded-xl hover:border-green-400 transition-colors h-[87px]
                     ${CurrentImage === index ? "border-green-400 border-2 opacity-75" : ""
                       }`}
                     initial={imageVariants.initial}
@@ -112,21 +104,24 @@ const DetailPage = () => {
           </div>
         </div>
       </div>
-
-      {/* <div className="mt-10">
-        <h2 className="font-semibold text-[1.8rem]">Reviews</h2>
-        {product.reviews && product.reviews.length === 0 && <p>No reviews yet</p>}
-        {product.reviews && product.reviews.map((review) => (
-          <div key={review._id} className="mb-4">
-            <strong>{review.name}</strong>
-            <div>
-              <span>Rating: {review.rating}</span>
-              <p>{review.comment}</p>
-            </div>
-          </div>
-        ))}
-        <AddReview productId={productId} fetchProduct={fetchProduct} />
-      </div> */}
+      <div className="flex justify-center gap-6 pt-[80px] font-medium text-[1.2rem]">
+        <div>
+          <Link to='d' >
+            Description
+          </Link>
+        </div>
+        <div>
+          <Link to='f' >
+            Features
+          </Link>
+        </div>
+        <div>
+          <Link to='r' >
+            Add Review
+          </Link>
+        </div>
+      </div>
+      <Outlet />
     </div>
   );
 };

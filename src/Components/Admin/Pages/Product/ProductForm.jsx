@@ -1,6 +1,7 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { Alert, Snackbar } from "@mui/material";
+import tinymce from "tinymce/tinymce";
 
 const ProductForm = () => {
   const [Name, setName] = useState("");
@@ -8,8 +9,34 @@ const ProductForm = () => {
   const [Price, setPrice] = useState("");
   const [shortDescrption, setshortDescription] = useState("");
   const [Category, setCategory] = useState("");
+  const [features, setFeatures] = useState("")
   const [image, setImage] = useState(null);
   const [toast, settoast] = useState(false);
+  const handleEditorChange = (e) => {
+    setFeatures(e.target.getFeatrues());
+  };
+  useEffect(() => {
+    tinymce.init({
+      selector: "#myEditor",
+      setup: (editor) => {
+        editor.on("Change", handleEditorChange);
+        // tinymce.activeEditor.getContent({format : 'html'})
+        if (features) {
+          const convertedHtml = marked(features);
+          console.log(convertedHtml);
+          editor.setContent(convertedHtml, { format: "html" });
+        }
+      },
+      plugins:
+        "advlist autolink lists link image charmap print preview anchor pagebreak ",
+      toolbar_mode: "floating",
+      toolbar:
+        "undo redo | bold italic underline  | alignjustify | bullist numlist outdent indent |",
+      image_title: true,
+      automatic_uploads: true,
+      forced_root_block: false,
+    });
+  }, [features]);
 
   const formRef = useRef(null);
   const handletoast = () => {
@@ -17,12 +44,15 @@ const ProductForm = () => {
   };
   const SubmitHandle = async (e) => {
     e.preventDefault();
+    tinymce.get("myEditor").save();
+    const updatedContent = tinymce.get("myEditor").getContent();
     const formData = new FormData();
     formData.append("name", Name);
     formData.append("description", Description);
     formData.append("price", Price);
     formData.append("shortdescription", shortDescrption);
     formData.append("category", Category);
+    formData.append("features", features);
     image.forEach((file) => formData.append("image", file));
     try {
       const response = await axios.post(
@@ -45,6 +75,7 @@ const ProductForm = () => {
         setPrice("");
         setshortDescription("");
         setCategory("");
+        setFeatures("");
         settoast(true);
       }
     } catch (error) {
@@ -57,9 +88,6 @@ const ProductForm = () => {
     console.log("Selected Images:", image);
     console.log(e);
   };
-  // if (SubmitHandle) {
-  //   toast.success("Product Uploaded");
-  // }
 
   return (
     <div className="flex flex-col justify-center items-center">
@@ -98,11 +126,23 @@ const ProductForm = () => {
         <div className="flex flex-col">
           <label className="pb-1 pl-1">Description:</label>
           <textarea
-            type="text"
-            className=" h-[190px] outline-none p-1 pl-2 pr-2 border-[2px] rounded-lg focus:border-green-400"
-            value={Description}
-            onChange={(e) => setDescription(e.target.value)}
+             type="text"
+             id="myEditor"
+             className="outline-none p-1 pl-2 pr-2 border-[2px] rounded-lg focus:border-green-400 h-[20px]"
+             value={Description}
+             onChange={(e) => setFeatures(e.target.value)}
           />
+        </div>
+        <div className="flex flex-col">
+          <label className="pb-1 pl-1">Features:</label>
+              <textarea
+              type="text"
+              id="myEditor"
+              className="outline-none p-1 pl-2 pr-2 border-[2px] rounded-lg focus:border-green-400 h-[20px]"
+              value={features}
+              onChange={(e) => setFeatures(e.target.value)}
+            />
+          
         </div>
         <div className="flex gap-4">
           <div className="flex flex-col w-[300px]">

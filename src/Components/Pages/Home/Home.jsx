@@ -4,14 +4,15 @@ import { Outlet, useParams } from "react-router-dom";
 import FearuredProducts from "./Products/FearuredProducts";
 import Search from "./Search";
 import { easeIn, easeInOut, motion, transform } from "framer-motion";
-import UserContext from "../../../Context/AuthContext";
+// import UserContext from "../../../Context/AuthContext";
 import Loader from "../../../Loader";
+import AuthContext from "../../../Context/AuthContext";
 
 const Home = () => {
   const [UserData, setUserData] = useState("");
   const [isLoaderComplete, setIsLoaderComplete] = useState(false);
   const { userId } = useParams();
-  const { userData } = useContext(UserContext);
+  const { user, loading } = useContext(AuthContext);
   const HeroText = [
     {
       word: "What"
@@ -80,7 +81,7 @@ const Home = () => {
 
   return (
     <>
-      {isLoaderComplete ? (
+ 
         <div>
           <div className="flex flex-col max-sm:justify-around md:justify-center max-sm:gap-2 max-sm:mt-[100px] ">
             <motion.div
@@ -95,7 +96,7 @@ const Home = () => {
                 animate="visible"
                 className="font-normal md:text-[2rem] max-sm:text-[1.4rem] overflow-hidden"
               >
-                <motion.h1 variants={textVariants} >Hi, Anas </motion.h1>
+                <motion.h1 variants={textVariants} >Hi, {user ? user.name : "Guest"} </motion.h1>
               </motion.h1>
               <div className="flex md:gap-4 flex-wrap w-[1100px] leading-tight">
                 {HeroText.map((word, index) => (
@@ -134,9 +135,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      ) : (
-        <Loader onCountdownEnd={() => setIsLoaderComplete(true)} />
-      )}
+    
     </>
   );
 };

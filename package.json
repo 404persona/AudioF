@@ -15,8 +15,10 @@
     "@emotion/styled": "^11.11.5",
     "@material-tailwind/react": "^2.1.9",
     "@mui/material": "^5.15.14",
+    "@tinymce/tinymce-react": "^5.1.1",
     "axios": "^1.6.8",
     "dotenv": "^16.4.5",
+    "draft-js": "^0.11.7",
     "framer-motion": "^11.0.8",
     "json-server": "^1.0.0-alpha.23",
     "locomotive-scroll": "^4.1.4",
@@ -27,7 +29,7 @@
     "react-router-dom": "^6.23.0",
     "react-toastify": "^10.0.5",
     "swiper": "^11.0.7",
-    "tinymce": "^7.1.1"
+    "tinymce": "^7.2.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.56",
